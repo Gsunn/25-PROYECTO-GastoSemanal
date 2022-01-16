@@ -24,12 +24,14 @@ class Presupuesto{
         this.calcularRestante();
     }
 
+
+
     calcularRestante(){
         const gastado = this.gastos.reduce((total, gasto) => total + gasto.cantidad, 0 )
         this.restante = this.presupuesto - gastado
       
     }
-
+ 
     eliminarGasto(id){
         this.gastos = this.gastos.filter(gasto => gasto.id !== id)   
         this.calcularRestante()
